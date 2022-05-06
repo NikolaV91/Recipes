@@ -16,7 +16,7 @@ const App =()=>{
   const [shouldUpdate, setUpdate] = useState(false)
   
   useEffect(()=>{
-    fetch('https://cors-anywhere.herokuapp.com/https://6245a34b6b7ecf057c21c934.mockapi.io/recipes')
+    fetch('https://6245a34b6b7ecf057c21c934.mockapi.io/recipes')
     .then((res)=>res.json())
     .then((data)=> setData(data))
   }, [shouldUpdate])
