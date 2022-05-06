@@ -8,18 +8,20 @@ import './single-page.css'
   const SinglePage = (props)=> { 
     return ( 
       <>
+          <h1>{props.recipe.meal}</h1>
         <div className="single-page">
-         <Link to={`/`}><button className='single-pageBtn' onClick={()=>props.setSelectedRecipe('')}>Back to home</button></Link> 
-          <h3>{props.recipe.meal}</h3>
           <img className='cardImg' src={props.recipe.image} alt="meal" />
-          <p>Prep time : {props.recipe.prepTime}</p>
-          <p>Level : {props.recipe.level}</p>
-          <ul>
-            Ingredients: 
-            {props.recipe.ingredients.map(e => <li>{e}</li>)}
-          </ul>
-          <p>Country of origin : {props.recipe.countryOfOrigin}</p>
+          <div className='detailsDiv'>
+            <h2>Prep time : {props.recipe.prepTime}</h2>
+            <h2>Level : {props.recipe.level}</h2>
+            <h2>Country of origin : {props.recipe.countryOfOrigin}</h2>
+            <ul>
+               <h2>Ingredients: </h2>
+              {props.recipe.ingredients.map(e => <li>{e}</li>)}
+             </ul>
+          </div>
         </div>
+         <Link to={`/`}><button className='single-pageBtn' onClick={()=>props.setSelectedRecipe('')}>Back to home</button></Link> 
       </>
      );
   }
