@@ -16,7 +16,7 @@ const App =()=>{
   const [shouldUpdate, setUpdate] = useState(false)
   
   useEffect(()=>{
-    fetch('https://6245a34b6b7ecf057c21c934.mockapi.io/recipes')
+    fetch('https://cors-anywhere.herokuapp.com/https://6245a34b6b7ecf057c21c934.mockapi.io/recipes')
     .then((res)=>res.json())
     .then((data)=> setData(data))
   }, [shouldUpdate])
@@ -34,7 +34,7 @@ const App =()=>{
   }
 
     return ( 
-      <div>
+      <div className='appDiv'>
           {isModalOpen && <Modal setShouldUpdate={setShouldUpdate} setModal={setModal}/>}
           <Header setModalToOpen={setModal}/>
           <Switch>

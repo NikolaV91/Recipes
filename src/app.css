@@ -6,3 +6,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+.appDiv{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
